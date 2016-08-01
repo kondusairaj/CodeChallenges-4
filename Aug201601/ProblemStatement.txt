@@ -1,0 +1,21 @@
+1st Aug 2016
+
+Watson gives Sherlock an array  A of length N. Then he asks him to determine if there exists an element in the array such that the sum of the elements on its left is equal to the sum of the elements on its right. If there are no elements to the left/right, then the sum is considered to be zero. 
+Formally, find an i , such that, A1 + A2 ... + Ai-1 =  Ai+1 + Ai+2 ... + AN.
+Input Format 
+Array of N positive integers.
+Output Format 
+Write unit tests to validate the input. 
+Constraints  
+1<= N <=105
+1<= Ai <= 2*104
+1<= i <= N
+Sample Input
+Input 1: 1,2,3
+Input 2: 11,20,8,31
+Sample Output
+TEST CASE: FAILED
+TEST CASE: PASSED
+Explanation 
+For the first test case, no such index exists. 
+For the second test case,A[1] + A[2] = A[4] , therefore index 3 satisfies the given conditions.
