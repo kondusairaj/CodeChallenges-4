@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aug201601
 {
@@ -20,13 +16,44 @@ namespace Aug201601
                 {
                     arr[i] = Convert.ToInt32(inputArr[i]);
                 }
-                Console.WriteLine("TEST CASE : " + GetStatus(arr, length));
+                Console.WriteLine("TEST CASE : " + GetStatus1(arr, length));
+                //Console.WriteLine("TEST CASE : " + GetStatus2(arr, length));  //remove comment to run
             }
 
             Console.ReadKey();
         }
 
-        public static string GetStatus(int[] arr, int length)
+        //Complexity : O(n)
+        public static string GetStatus1(int[] arr, int length)
+        {
+            int leftSum = arr[0];
+            int rightSum = arr[length - 1];
+            int i = 0, j = length - 1;
+            while (j - i != 2)
+            {
+                if (leftSum < rightSum)
+                {
+                    leftSum += arr[++i];
+                }
+                else if (leftSum > rightSum)
+                {
+                    rightSum += arr[--j];
+                }
+                else
+                {
+                    leftSum += arr[++i];
+                    rightSum += arr[--j];
+                }
+            }
+            if (leftSum == rightSum)
+            {
+                return "PASSED";
+            }
+            return "FAILED";
+        }
+
+        //Complexity : O(2n) // Calculating rightSum at initial is extra overhead here
+        public static string GetStatus2(int[] arr, int length)
         {
             int leftSum = arr[0];
             int rightSum = arr[2];
