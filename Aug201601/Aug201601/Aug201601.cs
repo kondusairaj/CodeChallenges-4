@@ -29,7 +29,7 @@ namespace Aug201601
             int leftSum = arr[0];
             int rightSum = arr[length - 1];
             int i = 0, j = length - 1;
-            while (j - i != 2)
+            while (j - i > 2)
             {
                 if (leftSum < rightSum)
                 {
