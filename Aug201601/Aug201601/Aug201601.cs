@@ -42,11 +42,7 @@ namespace Aug201601
                 else
                 {
                     leftSum += arr[++i];
-                    if (j - i <= 2)
-                    {
-                        break;
-                    }
-                    rightSum += arr[--j];
+                    if (j - i > 2) { rightSum += arr[--j]; }
                 }
             }
             if (leftSum == rightSum)
