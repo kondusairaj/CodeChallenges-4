@@ -26,9 +26,7 @@ namespace Aug12th2016
 
         /// <summary>
         /// Encryption of the string
-
         /// Time Complexity : O(n), where n is the length of string
-
         /// Space Complexity : O(n), where n is the length of string
         /// </summary>
         /// <param name="input"></param>
@@ -81,9 +79,7 @@ namespace Aug12th2016
 
         /// <summary>
         /// Decryption of the string
-
         /// Time Complexity : O(n), where n is the length of string
-
         /// Space Complexity : O(n), where n is the length of string
         /// </summary>
         /// <param name="input"></param>
