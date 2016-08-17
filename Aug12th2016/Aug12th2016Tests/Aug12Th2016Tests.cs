@@ -60,5 +60,18 @@ namespace Aug12th2016Tests
 
             Assert.IsTrue(input == decryptedString);
         }
+
+        [TestMethod]
+        public void TestMethod5()
+        {
+            string input = "It is in principle possible to decrypt the message without possessing the key";
+            string encryptedString = Aug12Th2016.Encrypt(input);
+            Console.WriteLine("\nEncrypted String : " + encryptedString);
+
+            string decryptedString = Aug12Th2016.Decrypt(encryptedString);
+            Console.WriteLine("\n\nDecrypted String : " + decryptedString);
+
+            Assert.IsTrue(input == decryptedString);
+        }
     }
 }

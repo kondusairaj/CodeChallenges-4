@@ -26,7 +26,9 @@ namespace Aug12th2016
 
         /// <summary>
         /// Encryption of the string
+
         /// Time Complexity : O(n), where n is the length of string
+
         /// Space Complexity : O(n), where n is the length of string
         /// </summary>
         /// <param name="input"></param>
@@ -45,14 +47,17 @@ namespace Aug12th2016
                 spaceIndexes[i] = inputBuilder.Length + 1;
             }
             inputBuilder.Append(wordsArr[noofWords - 1]);
-
             int inLenwSpace = inputBuilder.Length;
+
+            //Calculating number of rows and number of columns
             int rows = (int)Math.Sqrt(1.0 * inLenwSpace);
             int columns = (int)Math.Ceiling(Math.Sqrt(1.0 * inLenwSpace));
             if (rows * columns < inLenwSpace)
             {
                 rows += 1;
             }
+
+            //Doing encryption without converting string into grid format
             for (int i = 0; i < columns; i++)
             {
                 int j = i, k = 0;
@@ -64,6 +69,8 @@ namespace Aug12th2016
                 }
                 outputBuilder.Append(" ");
             }
+
+            //Adding space at respective position
             outputBuilder.Append("numsp");
             foreach (int index in spaceIndexes)
             {
@@ -74,7 +81,9 @@ namespace Aug12th2016
 
         /// <summary>
         /// Decryption of the string
+
         /// Time Complexity : O(n), where n is the length of string
+
         /// Space Complexity : O(n), where n is the length of string
         /// </summary>
         /// <param name="input"></param>
@@ -96,6 +105,8 @@ namespace Aug12th2016
                 int noofWords = wordsArr.Length;
                 int lenofFirstStr = wordsArr[0].Length;
                 StringBuilder outputBuilder = new StringBuilder(inTobeDecrypted.Length - (noofWords - 1) + spaceStrLen);
+
+                //Doing decryption without converting string into grid format
                 int j = 0;
                 while (j < lenofFirstStr)
                 {
@@ -109,6 +120,7 @@ namespace Aug12th2016
                     j++;
                 }
 
+                //Adding space at respective position
                 int z = 0;
                 foreach (string index in spaceIndex)
                 {
