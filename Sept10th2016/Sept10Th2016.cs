@@ -3,20 +3,6 @@ using System.Collections.Generic;
 
 namespace Sept10th2016
 {
-    // It stores the distance from source point and co-ordinate point
-    struct Cell
-    {
-        public int Distance;
-        public CoOrdinate Point;
-    }
-
-    // Store co-ordinate points
-    struct CoOrdinate
-    {
-        public int X;
-        public int Y;
-    }
-
     class Sept10Th2016
     {
         // Use to get row and column numbers of 4 neighbours of a given cell
@@ -81,6 +67,22 @@ namespace Sept10th2016
 
         /// <summary>
         /// Calculate shortest path distance for given start to an end point
+        /// I have used Breadth First Search (BFS) algorithm to get the shortest path from source to destination
+        /// 
+        /// *****************************************************************************************************
+        /// Algorithm :
+        /// 
+        /// BFS(Graph G, Start Vertex S)
+        /// [All nodes initially unexplored]
+        /// - Mark S as explored
+        /// - Let Q = queue data structure (FIFO), initiated with S
+        /// - While Q not Empty
+        ///     - Remove the frist node of Q, call it V
+        ///     - For each edge (V, w)
+        ///         - If W unexplored
+        ///	            - Mark W as explored
+        ///	            - Add W to Q (At the end)
+        /// ******************************************************************************************************
         /// Time Complexity : O(p * q)
         /// Space Complexity Approximate : O(p * q)
         /// </summary>
@@ -156,5 +158,19 @@ namespace Sept10th2016
         {
             return (x >= 0 && x < p && y >= 0 && y < q);
         }
+    }
+
+    // It stores the distance from source point and co-ordinate point
+    struct Cell
+    {
+        public int Distance;
+        public CoOrdinate Point;
+    }
+
+    // Store co-ordinate points
+    struct CoOrdinate
+    {
+        public int X;
+        public int Y;
     }
 }
