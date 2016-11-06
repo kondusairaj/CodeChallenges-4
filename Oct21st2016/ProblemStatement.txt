@@ -1,0 +1,20 @@
+Design Problem
+Design your own ATM machine which can take in the amount and dispense the cash based on the available denominations. Input will be the amount to be dispensed and the output will be the number of notes for each denomination dispensed. Available denominations are 1000, 500, 100.
+Use design patterns appropriately as required. Make sure that your design is extensible(for future advancements) and follows SOLID principles.
+Constraints
+Amount will be dispensed in descending order of denominations (higher denomination will be dispensed first followed by the next lower denomination).
+Input Format
+Input will be an integer which would be the amount to be dispensed.
+Output Format
+The number of each denominations dispensed.
+Sample Input
+Input 1:
+3500
+Input 2:
+3550
+Sample Output:
+Output 1:
+1000 x 3
+500 x 1
+Output 2:
+Amount cannot be dispensed
