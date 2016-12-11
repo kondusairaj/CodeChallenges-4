@@ -1,6 +1,7 @@
 ﻿using Nov18th2016.ConcreteState;
 using Nov18th2016.State;
 using System;
+using System.Collections;
 
 namespace Nov18th2016.Context
 {
@@ -42,15 +43,15 @@ namespace Nov18th2016.Context
         /// <returns></returns>
         private AccountState GetAccountState(string accountState)
         {
-            if (accountState == "Active")
+            switch (accountState.ToLower())
             {
-                return new Active(this);
+                case "active":
+                    return new Active(this);
+                case "closed":
+                    return new Closed(this);
+                default:
+                    return new InOperative(this);
             }
-            if (accountState == "Closed")
-            {
-                return new Closed(this);
-            }
-            return new InOperative(this);
         }
     }
 }

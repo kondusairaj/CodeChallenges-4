@@ -18,19 +18,21 @@ namespace Nov18th2016
 
                 Account account = new Account(accountState);
 
-                if (operation == "Deposit")
+                if (operation != null)
                 {
-                    account.Deposit();
+                    switch (operation.ToLower())
+                    {
+                        case "deposit":
+                            account.Deposit();
+                            break;
+                        case "withdraw":
+                            account.WithDraw();
+                            break;
+                        default:
+                            account.BalanceEnquiry();
+                            break;
+                    }
                 }
-                else if (operation == "WithDraw")
-                {
-                    account.WithDraw();
-                }
-                else
-                {
-                    account.BalanceEnquiry();
-                }
-
                 Console.ReadKey();
             }
             catch (Exception e)
